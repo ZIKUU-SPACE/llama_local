@@ -10,7 +10,8 @@ B_INST, E_INST = "[INST]", "[/INST]"
 B_SYS, E_SYS = "<<SYS>>\n", "\n<</SYS>>\n\n"
 DEFAULT_SYSTEM_PROMPT = "あなたは誠実で優秀な日本人のアシスタントです。どんな難問にも挑戦してくれると信じています。"
 
-model_path = "models/ELYZA-japanese-Llama-2-7b-fast-instruct-q4_K_M.gguf"
+#model_path = "models/ELYZA-japanese-Llama-2-7b-fast-instruct-q4_K_M.gguf" '''
+model_path = "models/ELYZA-japanese-Llama-2-13b-fast-instruct-q4_K_M.gguf"
 
 class StreamHandler(BaseCallbackHandler):
     def __init__(self, container, initial_text="", display_method='markdown'):
@@ -44,7 +45,7 @@ with st.sidebar:
     st.divider()
 
     st.text("設定")
-    max_tokens = st.slider('Max Tokens', value=1000, min_value=200, max_value=4000, step=100)
+    max_tokens = st.slider('Max Tokens', value=4096, min_value=1024, max_value=8192, step=16)
     temperature = st.slider('Temperature', value=0.75, min_value=0.1, max_value=1.5, step=0.05)
 
 with st.form(key="generation_form"):

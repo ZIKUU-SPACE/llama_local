@@ -1,2 +1,4 @@
 models/ELYZA-japanese-Llama-2-7b-fast-instruct-q4_K_M.gguf
+models/ELYZA-japanese-Llama-2-13b-fast-instruct-q4_K_M.gguf
 __pycache__
+streamlit.log
